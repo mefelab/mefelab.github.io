@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Research — MEFE Lab</title>
-  <meta name="description" content="Research in the MEFE Lab: ecological engineering of robust microbiome function across soil and host-associated systems." />
+  <title>Research — Kiseok Lee Group</title>
+  <meta name="description" content="Research in the Kiseok Lee Group: ecological engineering of robust microbiome function." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -15,12 +15,9 @@
   <header class="site-header">
     <div class="container nav">
       <div class="brand">
-        <a href="index.html" style="display:flex;align-items:center;gap:12px;">
-          <span class="logo">MEFE</span>
-          <span class="brand-text">
-            <span class="brand-name">MEFE Lab</span>
-            <span class="brand-sub">Microbial Ecology &amp; Functional Engineering</span>
-          </span>
+        <a href="index.html" style="display:flex;align-items:center;gap:12px;text-decoration:none;">
+          <img src="assets/logo.svg" alt="Kiseok Lee Group" class="logo-img" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo',textContent:'MEFE'}))" />
+          <span class="brand-name" style="color:var(--teal-900);font-weight:800;">Kiseok Lee Group</span>
         </a>
       </div>
       <nav class="nav-links">
@@ -37,243 +34,52 @@
     </div>
   </header>
 
-  <!-- intro -->
-  <section class="hero">
-    <div class="container" style="padding-top:64px;padding-bottom:64px;">
-      <span class="eyebrow">Research</span>
-      <h1>Ecological engineering of microbiome function</h1>
-      <p class="lead">
-        Our central question is <em>how to design robust microbiome function</em>.
-        We define <strong>ecological engineering</strong> as identifying the key variables
-        that govern function in an ecosystem and tuning them &mdash; so that a target
-        metabolic function holds steady across different environments and perturbations.
+  <div class="page-head">
+    <div class="container">
+      <h1>Research</h1>
+      <p class="sub">Ecological engineering of robust microbiome function.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="container" style="max-width:760px;">
+      <p class="lead-text">
+        Our central question is <strong>how to design robust microbiome function</strong> — metabolic
+        function that holds up across the changing conditions of the real world. We identify the few
+        ecological variables that govern a community's function and tune them, so a target function
+        stays stable across environments and perturbations.
+      </p>
+      <p style="color:var(--slate);">
+        We pursue this through three connected directions: (1) understanding how microbiomes respond
+        to environmental change, using perturbation experiments, time-series measurement, and
+        consumer–resource modeling; (2) finding the right interacting functional units with machine
+        learning on metagenomic data; and (3) engineering microbiome function with synthetic biology.
+        We apply these ideas across two model systems of contrasting complexity — soil and rice-paddy
+        greenhouse-gas cycling, and the vaginal microbiome.
+      </p>
+      <p style="color:var(--slate);">
+        Recent example: in soil nitrogen cycling (<a href="https://doi.org/10.1038/s41586-025-09264-9" target="_blank" rel="noopener">Lee et al., <em>Nature</em> 2025</a>),
+        just two parameters predicted nitrate dynamics across all soils — the kind of minimal,
+        designable handle on function we aim to find and engineer.
       </p>
     </div>
   </section>
 
-  <!-- the problem -->
-  <section>
-    <div class="container">
-      <div class="split">
-        <div>
-          <span class="eyebrow" style="color:var(--teal-500);font-weight:700;">The Challenge</span>
-          <h2>Why microbiome function breaks down</h2>
-          <p class="lead-text">
-            Microbial solutions are living systems. A consortium that boosts plant growth or
-            clears a pathogen in a sterile lab often fails in the field or the body, because
-            the real environment differs in two ways: the <strong>abiotic conditions</strong>
-            (temperature, pH, nutrients) and the <strong>resident community</strong> it must
-            compete with.
-          </p>
-          <p>
-            This is not a niche problem. Of the microbiome therapeutics approved by the FDA to
-            prevent recurrent <em>C. difficile</em> infection, all remain fecal-transplant–based;
-            every rationally designed defined consortium has so far failed to show efficacy in
-            early trials. Designing microbiome metabolic function reliably is still at an early
-            stage &mdash; and that is the gap our lab works to close.
-          </p>
-        </div>
-        <div class="visual">
-          <svg viewBox="0 0 320 240" width="80%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <defs>
-              <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#1a8f88"/><stop offset="1" stop-color="#5cc3bb"/>
-              </linearGradient>
-            </defs>
-            <path d="M20 200 C 80 120, 120 120, 160 150 S 250 160, 300 90" fill="none" stroke="#cfe3e1" stroke-width="3" stroke-dasharray="6 6"/>
-            <path d="M20 200 C 80 140, 120 90, 160 110 S 250 60, 300 70" fill="none" stroke="url(#g1)" stroke-width="4"/>
-            <circle cx="20" cy="200" r="6" fill="#0f5e5a"/>
-            <circle cx="160" cy="110" r="6" fill="#1a8f88"/>
-            <circle cx="300" cy="70" r="6" fill="#5cc3bb"/>
-            <text x="16" y="228" font-family="Inter, sans-serif" font-size="11" fill="#7a8a89">environmental change →</text>
-          </svg>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- approach: P-M-M -->
-  <section class="section-soft">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Our Approach</span>
-        <h2>Perturb · Measure · Model</h2>
-        <p class="lead-text">
-          A generalizable workflow for finding the few ecological factors that actually
-          control function &mdash; demonstrated in soil nitrogen cycling
-          (<a href="https://doi.org/10.1038/s41586-025-09264-9" target="_blank" rel="noopener">Lee et al., <em>Nature</em> 2025</a>),
-          where just two parameters predicted nitrate dynamics across all soils.
-        </p>
-      </div>
-      <div class="steps">
-        <div class="step">
-          <div class="badge">P</div>
-          <div>
-            <h3>Perturb</h3>
-            <p>Run controlled environmental-perturbation experiments on carefully assembled communities &mdash; varying pH, oxygen, electron acceptors, temperature, and carbon sources.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="badge">M</div>
-          <div>
-            <h3>Measure</h3>
-            <p>Track metabolite and gas dynamics with precise time-series measurement, paired with sequencing and metagenomics of the community.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="badge">M</div>
-          <div>
-            <h3>Model</h3>
-            <p>Use consumer–resource models and dimension reduction to collapse complexity into a few predictive parameters &mdash; the levers we can later engineer.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- three directions -->
-  <section>
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Research Directions</span>
-        <h2>Three connected directions</h2>
-        <p class="lead-text">Independent but mutually reinforcing efforts toward robust, designable microbiome function.</p>
-      </div>
-
-      <div class="grid grid-3">
-        <div class="card">
-          <span class="num">01</span>
-          <h3>Microbiome response to environmental change</h3>
-          <p>We identify the minimal ecological factors that govern function under perturbation.
-          Building on our soil nitrogen-cycle work, we are extending the perturb–measure–model
-          approach to agricultural greenhouse gases (CO₂, CH₄, N₂O), with a focus on
-          <strong>methane emission from rice paddies</strong> &mdash; modeling how the nutrient
-          landscape and resident community (methanogens, methanotrophs) set emission.</p>
-          <div class="tags">
-            <span class="tag">Perturbation experiments</span>
-            <span class="tag">Greenhouse gases</span>
-            <span class="tag">Theory</span>
-          </div>
-        </div>
-        <div class="card">
-          <span class="num">02</span>
-          <h3>Functional units via machine learning</h3>
-          <p>Natural communities are high-dimensional. We use machine learning on sequencing
-          and metagenomic data to find the right <strong>interacting functional units</strong> &mdash;
-          the coarse-grained variables that predict community metabolic behavior and that
-          map onto things we can manipulate.</p>
-          <div class="tags">
-            <span class="tag">Metagenomics</span>
-            <span class="tag">Machine learning</span>
-            <span class="tag">Dimension reduction</span>
-          </div>
-        </div>
-        <div class="card">
-          <span class="num">03</span>
-          <h3>Engineering function with synthetic biology</h3>
-          <p>We turn ecological understanding into control. Using synthetic biology &mdash;
-          including nutrient-niche engineering and designed dependencies &mdash; we build
-          consortia whose target metabolic function persists in realistic, competitive
-          environments such as the host.</p>
-          <div class="tags">
-            <span class="tag">Synthetic ecology</span>
-            <span class="tag">Niche engineering</span>
-            <span class="tag">Live therapeutics</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- model systems detail -->
-  <section class="section-soft">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Model Systems</span>
-        <h2>Where we apply these ideas</h2>
-        <p class="lead-text">
-          In the lab's first phase (~6–8 years) we build on two systems of contrasting complexity;
-          later we expand to other environmental and host-associated inflammation systems through collaboration.
-        </p>
-      </div>
-      <div class="grid grid-2">
-        <div class="card">
-          <h3>Soil &amp; rice-paddy systems <span style="font-weight:500;color:var(--muted);font-size:0.85rem;">— most complex</span></h3>
-          <p>High species diversity and strong spatial and physicochemical heterogeneity make
-          soil the ideal testbed for finding minimal predictive variables. Our near-term focus is
-          methane mitigation in rice paddies, building research resources rapidly through collaboration.</p>
-        </div>
-        <div class="card">
-          <h3>Vaginal microbiome <span style="font-weight:500;color:var(--muted);font-size:0.85rem;">— less complex</span></h3>
-          <p>A tractable, clinically important community where we design synthetic-biology
-          solutions for recurrent bacterial vaginosis &mdash; a model for engineering
-          microbiome solutions to inflammation more broadly.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- skills -->
-  <section>
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Training</span>
-        <h2>What you'll learn here</h2>
-        <p class="lead-text">Every project is unique, but members build a shared toolkit spanning ecology, computation, and the bench.</p>
-      </div>
-      <div class="grid grid-3">
-        <div class="card">
-          <h3>Quantitative ecology</h3>
-          <p>Consumer–resource modeling, community assembly, perturbation design, and theory-grounded experiment.</p>
-        </div>
-        <div class="card">
-          <h3>Computation</h3>
-          <p>Metagenomics pipelines, next-generation sequencing analysis, machine learning, and data visualization in R/Python.</p>
-        </div>
-        <div class="card">
-          <h3>Bench &amp; analytics</h3>
-          <p>Anaerobic culturing, metabolite and gas measurement, molecular cloning, and synthetic-biology design.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- footer -->
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="logo">MEFE</div>
-          <p style="margin-top:14px;max-width:38ch;color:#a9bfe0;">
-            Microbial Ecology &amp; Functional Engineering Lab<br />
-            미생물생태 기능설계 연구실<br />
-            Yonsei University
-          </p>
-        </div>
-        <div>
-          <h4>Explore</h4>
-          <ul>
-            <li><a href="research.html">Research</a></li>
-            <li><a href="mission.html">Mission</a></li>
-            <li><a href="team.html">Team</a></li>
-            <li><a href="pi.html">PI</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Connect</h4>
-          <ul>
-            <li><a href="papers.html">Papers</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="join.html">Join Us</a></li>
-            <li><a href="https://scholar.google.com/citations?user=UcMtC88AAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a></li>
-          </ul>
-        </div>
+    <div class="container footer-inner">
+      <div>
+        <div class="f-name">Kiseok Lee Group</div>
+        <div class="f-sub">MEFE Lab · 미생물생태 기능설계 연구실 · Yonsei University</div>
       </div>
-      <div class="footer-bottom">
-        <span>© 2027 MEFE Lab · Kiseok Lee</span>
-        <span>Yonsei University · Seoul, Korea</span>
-      </div>
+      <nav class="footer-links">
+        <a href="research.html">Research</a>
+        <a href="pi.html">PI</a>
+        <a href="papers.html">Papers</a>
+        <a href="join.html">Join Us</a>
+        <a href="https://scholar.google.com/citations?user=UcMtC88AAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+      </nav>
     </div>
+    <div class="container" style="margin-top:18px;color:#8fa3c8;font-size:0.85rem;">© 2027 Kiseok Lee Group · Yonsei University · Seoul, Korea</div>
   </footer>
 
   <script src="assets/nav.js"></script>

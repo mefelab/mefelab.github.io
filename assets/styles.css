@@ -68,6 +68,7 @@ p { margin: 0 0 1.1rem; }
   display: grid; place-items: center; color: #fff; font-weight: 800; font-size: 1rem;
   letter-spacing: 0.5px;
 }
+.brand .logo-img { width: 42px; height: 42px; border-radius: 10px; object-fit: contain; flex: none; display: block; }
 .brand .brand-text { line-height: 1.15; }
 .brand .brand-name { font-weight: 800; color: var(--teal-900); font-size: 1.02rem; }
 .brand .brand-sub { font-size: 0.74rem; color: var(--muted); letter-spacing: 0.02em; }
@@ -112,10 +113,29 @@ p { margin: 0 0 1.1rem; }
   background: var(--teal-300); opacity: 0.35;
 }
 
+/* ---------- Home hero (full-bleed campus image) ---------- */
+.home-hero {
+  position: relative; min-height: 76vh; display: flex; align-items: flex-end;
+  background-image:
+    linear-gradient(to top, rgba(0,26,77,0.78) 0%, rgba(0,26,77,0.25) 45%, rgba(0,26,77,0.10) 100%),
+    url("https://www.yonsei.ac.kr/sites/en_sc/images/sub/img-s-cam1.jpg");
+  background-size: cover; background-position: center 35%;
+  border-bottom: 1px solid var(--line);
+}
+.home-hero .inner { padding: 0 0 60px; color: #fff; }
+.home-hero h1 { color: #fff; font-size: clamp(2.4rem, 5.2vw, 4rem); margin: 0 0 10px; letter-spacing: -0.02em; }
+.home-hero .sub { color: rgba(255,255,255,0.94); font-size: clamp(1.05rem, 2vw, 1.35rem); margin: 0; max-width: 56ch; }
+@media (max-width: 560px){ .home-hero { min-height: 64vh; } .home-hero .inner { padding-bottom: 40px; } }
+
+/* ---------- Compact page header (inner pages) ---------- */
+.page-head { padding: 52px 0 18px; }
+.page-head h1 { margin: 0 0 8px; }
+.page-head .sub { margin: 0; color: var(--slate); font-size: 1.08rem; max-width: 64ch; }
+
 /* ---------- Sections ---------- */
-section { padding: 72px 0; }
-.section-soft { background: var(--bg-soft); }
-.section-head { max-width: 70ch; margin-bottom: 40px; }
+section { padding: 48px 0; }
+.section-soft { background: var(--bg); }   /* single white background, no alternating tint */
+.section-head { max-width: 70ch; margin-bottom: 24px; }
 .section-head .eyebrow {
   display:block; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em;
   text-transform: uppercase; color: var(--teal-500); margin-bottom: 10px;
@@ -217,7 +237,8 @@ section { padding: 72px 0; }
 /* ---------- People ---------- */
 .profile { display:grid; grid-template-columns: 260px 1fr; gap: 40px; align-items:start; }
 .avatar {
-  width: 100%; aspect-ratio: 1; border-radius: var(--radius); overflow:hidden;
+  width: 100%; aspect-ratio: 3 / 4; border-radius: var(--radius); overflow:hidden;
+  object-fit: cover; object-position: center top;
   background: linear-gradient(135deg, var(--teal-500), var(--teal-300));
   display:grid; place-items:center; color:#fff; font-size: 3.4rem; font-weight: 800;
 }
@@ -254,9 +275,18 @@ section { padding: 72px 0; }
 .callout .btn-primary { background:#fff; color: var(--teal-900); }
 .callout .btn-primary:hover { background: var(--teal-050); }
 
-/* ---------- Footer ---------- */
+/* ---------- Slim footer ---------- */
+.footer-inner {
+  display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap;
+}
+.footer-inner .f-name { font-weight: 700; color: #fff; }
+.footer-inner .f-sub { color: #8fa3c8; font-size: 0.85rem; }
+.footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
+.footer-links a { color: #dbe6f7; font-size: 0.92rem; }
+
+/* ---------- Footer (legacy grid, kept for any page still using it) ---------- */
 .site-footer {
-  background: var(--teal-900); color: #b9c8e2; padding: 56px 0 30px; margin-top: 0;
+  background: var(--teal-900); color: #b9c8e2; padding: 34px 0 26px; margin-top: 0;
 }
 .site-footer a { color: #dbe6f7; }
 .footer-grid { display:grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
