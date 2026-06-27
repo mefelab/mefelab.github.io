@@ -113,19 +113,16 @@ p { margin: 0 0 1.1rem; }
   background: var(--teal-300); opacity: 0.35;
 }
 
-/* ---------- Home hero (full-bleed campus image) ---------- */
-.home-hero {
-  position: relative; min-height: 76vh; display: flex; align-items: flex-end;
-  background-image:
-    linear-gradient(to top, rgba(0,26,77,0.78) 0%, rgba(0,26,77,0.25) 45%, rgba(0,26,77,0.10) 100%),
-    url("https://www.yonsei.ac.kr/sites/en_sc/images/sub/img-s-cam1.jpg");
-  background-size: cover; background-position: center 35%;
-  border-bottom: 1px solid var(--line);
+/* ---------- Home hero (text + small framed campus image) ---------- */
+.home-hero { padding: 60px 0 28px; background: var(--bg); }
+.hero-wrap { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 44px; align-items: center; }
+.home-hero h1 { font-size: clamp(2.1rem, 4vw, 3.1rem); margin: 0 0 12px; letter-spacing: -0.02em; }
+.home-hero .sub { color: var(--slate); font-size: clamp(1.05rem, 1.8vw, 1.28rem); margin: 0; max-width: 46ch; }
+.hero-photo {
+  width: 100%; height: auto; max-height: 360px; object-fit: cover;
+  border-radius: var(--radius); box-shadow: var(--shadow); display: block;
 }
-.home-hero .inner { padding: 0 0 60px; color: #fff; }
-.home-hero h1 { color: #fff; font-size: clamp(2.4rem, 5.2vw, 4rem); margin: 0 0 10px; letter-spacing: -0.02em; }
-.home-hero .sub { color: rgba(255,255,255,0.94); font-size: clamp(1.05rem, 2vw, 1.35rem); margin: 0; max-width: 56ch; }
-@media (max-width: 560px){ .home-hero { min-height: 64vh; } .home-hero .inner { padding-bottom: 40px; } }
+@media (max-width: 760px){ .hero-wrap { grid-template-columns: 1fr; gap: 22px; } .home-hero { padding-top: 40px; } }
 
 /* ---------- Compact page header (inner pages) ---------- */
 .page-head { padding: 52px 0 18px; }
