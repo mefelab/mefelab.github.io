@@ -34,51 +34,59 @@
     </div>
   </header>
 
-  <!-- Hero: centered campus banner + title below -->
+  <!-- Hero: campus image with title overlaid inside (Jin-style) -->
   <section class="home-hero">
     <div class="container">
-      <img class="hero-banner" src="assets/hero.jpg" alt="Yonsei University campus"
-           onerror="this.onerror=null;this.src='https://www.yonsei.ac.kr/sites/en_sc/images/sub/img-s-cam1.jpg';" />
-      <h1>Microbiome Ecology &amp; Functional Engineering Lab</h1>
-      <p class="sub">at Yonsei University, Systems Biology Department &nbsp;(PI: Kiseok Lee)</p>
+      <div class="home-wrap">
+        <figure class="hero-figure">
+          <img src="assets/hero.jpg" alt="Yonsei University campus"
+               onerror="this.onerror=null;this.src='https://www.yonsei.ac.kr/sites/en_sc/images/sub/img-s-cam1.jpg';" />
+          <figcaption class="caption">
+            <h1>Kiseok Lee Group</h1>
+            <p>Microbiome Ecology &amp; Functional Engineering Lab at Yonsei University.</p>
+          </figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
-  <!-- Intro + second (small) home photo -->
+  <!-- Intro + small lab logo -->
   <section>
-    <div class="container home-intro">
-      <div>
+    <div class="container">
+      <div class="home-wrap">
         <p class="lead-text">
           We study <strong>how to design robust microbiome function</strong> — combining microbial
           ecology, data-driven modeling, and synthetic biology to engineer microbial communities that
           perform reliably across changing environments, from agricultural soils to the human body.
         </p>
-        <p style="color:var(--slate);">
+        <img class="home-logo" src="assets/MEFE_logo_260628ver2-01.png" alt="MEFE lab logo"
+             onerror="this.style.display='none';" />
+        <p style="color:var(--slate);margin-top:18px;">
           The lab opens in March 2027. We are recruiting our founding team —
           <a href="join.html">see open positions</a>.
         </p>
       </div>
-      <img class="home-photo" src="assets/home2.jpg" alt=""
-           onerror="this.closest('.home-intro').style.gridTemplateColumns='1fr';this.style.display='none';" />
     </div>
   </section>
 
   <!-- Recent news -->
   <section>
-    <div class="container" style="max-width:820px;">
-      <h2>Recent news</h2>
-      <div class="news">
-        <div class="news-item">
-          <span class="date">Mar 2027</span>
-          <p>The lab opens at Yonsei University. We are recruiting students, postdocs, and undergraduates — <a href="join.html">join us</a>.</p>
-        </div>
-        <div class="news-item">
-          <span class="date">2025</span>
-          <p>Our soil microbiome work is published in <em>Nature</em>: <a href="https://doi.org/10.1038/s41586-025-09264-9" target="_blank" rel="noopener">Functional regimes define soil microbiome response to environmental change</a>.</p>
-        </div>
-        <div class="news-item">
-          <span class="date">2025</span>
-          <p>Kiseok completes his Ph.D. at the University of Chicago and begins postdoctoral research at the University of Delaware.</p>
+    <div class="container">
+      <div class="home-wrap">
+        <h2>Recent news</h2>
+        <div class="news">
+          <div class="news-item">
+            <span class="date">Mar 2027</span>
+            <p>The lab opens at Yonsei University. We are recruiting students, postdocs, and undergraduates — <a href="join.html">join us</a>.</p>
+          </div>
+          <div class="news-item">
+            <span class="date">2025</span>
+            <p>Our soil microbiome work is published in <em>Nature</em>: <a href="https://doi.org/10.1038/s41586-025-09264-9" target="_blank" rel="noopener">Functional regimes define soil microbiome response to environmental change</a>.</p>
+          </div>
+          <div class="news-item">
+            <span class="date">2025</span>
+            <p>Kiseok completes his Ph.D. at the University of Chicago and begins postdoctoral research at the University of Delaware.</p>
+          </div>
         </div>
       </div>
     </div>

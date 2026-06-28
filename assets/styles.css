@@ -68,7 +68,7 @@ p { margin: 0 0 1.1rem; }
   display: grid; place-items: center; color: #fff; font-weight: 800; font-size: 1rem;
   letter-spacing: 0.5px;
 }
-.brand .logo-img { height: 44px; width: auto; max-width: 150px; border-radius: 8px; object-fit: contain; flex: none; display: block; }
+.brand .logo-img { height: 60px; width: auto; max-width: 210px; border-radius: 8px; object-fit: contain; flex: none; display: block; }
 .brand .brand-text { line-height: 1.15; }
 .brand .brand-name { font-weight: 800; color: var(--teal-900); font-size: 1.02rem; }
 .brand .brand-sub { font-size: 0.74rem; color: var(--muted); letter-spacing: 0.02em; }
@@ -113,22 +113,19 @@ p { margin: 0 0 1.1rem; }
   background: var(--teal-300); opacity: 0.35;
 }
 
-/* ---------- Home hero (centered banner image + title below, Jin-style) ---------- */
-.home-hero { padding: 40px 0 22px; background: var(--bg); text-align: center; }
-.hero-banner {
-  width: 100%; max-width: 760px; max-height: 420px; object-fit: cover;
-  border-radius: var(--radius); box-shadow: var(--shadow); display: block; margin: 0 auto 30px;
+/* ---------- Home hero (title overlaid inside the image, Jin-style) ---------- */
+.home-hero { padding: 34px 0 6px; background: var(--bg); }
+.home-wrap { max-width: 860px; margin: 0 auto; }   /* shared column so hero + text align */
+.hero-figure { position: relative; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); margin: 0; }
+.hero-figure img { width: 100%; height: clamp(280px, 40vw, 430px); object-fit: cover; display: block; }
+.hero-figure .caption {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 28px 32px; text-align: left;
+  background: linear-gradient(to top, rgba(0,26,77,0.88), rgba(0,26,77,0.32) 58%, transparent);
+  color: #fff;
 }
-.home-hero h1 { font-size: clamp(1.85rem, 3.4vw, 2.7rem); margin: 0 0 10px; letter-spacing: -0.02em; }
-.home-hero .sub { color: var(--slate); font-size: clamp(1.02rem, 1.7vw, 1.2rem); margin: 0 auto; max-width: 72ch; }
-
-/* second, small home photo beside intro text */
-.home-intro { display: grid; grid-template-columns: 1fr 340px; gap: 38px; align-items: center; }
-.home-photo {
-  width: 100%; height: auto; max-height: 300px; object-fit: cover;
-  border-radius: var(--radius); box-shadow: var(--shadow); display: block;
-}
-@media (max-width: 760px){ .home-intro { grid-template-columns: 1fr; gap: 22px; } }
+.hero-figure .caption h1 { color: #fff; font-size: clamp(1.7rem, 3.6vw, 2.7rem); margin: 0 0 6px; letter-spacing: -0.02em; text-shadow: 0 2px 14px rgba(0,0,0,0.4); }
+.hero-figure .caption p { color: rgba(255,255,255,0.96); font-size: clamp(0.98rem, 1.6vw, 1.18rem); margin: 0; text-shadow: 0 1px 8px rgba(0,0,0,0.45); }
+.home-logo { height: 58px; width: auto; display: block; margin: 22px 0 0; }
 
 /* ---------- Compact page header (inner pages) ---------- */
 .page-head { padding: 52px 0 18px; }
@@ -238,9 +235,9 @@ section { padding: 48px 0; }
 .pub .chip.hot { background: #fff7ec; border-color:#f3dcb3; color: var(--amber); font-weight:600; }
 
 /* ---------- People ---------- */
-.profile { display:grid; grid-template-columns: 160px 1fr; gap: 40px; align-items:start; }
+.profile { display:grid; grid-template-columns: 140px 1fr; gap: 40px; align-items:start; }
 .avatar {
-  width: 100%; aspect-ratio: 3 / 4; border-radius: var(--radius); overflow:hidden;
+  width: 100%; aspect-ratio: 3 / 4; border-radius: 50%; overflow:hidden;
   object-fit: cover; object-position: center top;
   background: linear-gradient(135deg, var(--teal-500), var(--teal-300));
   display:grid; place-items:center; color:#fff; font-size: 3.4rem; font-weight: 800;
