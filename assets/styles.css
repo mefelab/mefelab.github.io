@@ -327,3 +327,44 @@ section { padding: 48px 0; }
   .info-row { flex-direction: column; gap: 2px; }
   .info-row .k { width: auto; }
 }
+
+/* ---------- Home intro: logo left, text right ---------- */
+.intro-row { display: flex; gap: 30px; align-items: center; }
+.intro-row .home-logo { margin: 0; flex: none; }
+.intro-row .intro-text { margin: 0; }
+@media (max-width: 600px){ .intro-row { flex-direction: column; align-items: flex-start; gap: 16px; } }
+
+/* ---------- Image placeholder (dashed) ---------- */
+.img-placeholder {
+  border: 2px dashed var(--teal-300); border-radius: var(--radius); background: var(--bg-soft);
+  color: var(--muted); padding: 52px 20px; text-align: center; font-size: 0.92rem;
+}
+
+/* ---------- Featured publication card ---------- */
+.pub-feature {
+  display: grid; grid-template-columns: 200px 1fr; gap: 24px; align-items: start;
+  border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; margin-bottom: 18px;
+}
+.pub-feature .thumb { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 10px; display: block; }
+.pub-feature .thumb-ph {
+  width: 100%; aspect-ratio: 4/3; border: 2px dashed var(--teal-300); border-radius: 10px;
+  background: var(--bg-soft); color: var(--muted); display: grid; place-items: center; text-align: center; font-size: 0.78rem; padding: 10px;
+}
+.pub-feature .cite { font-weight: 600; color: var(--ink); margin: 0 0 6px; }
+.pub-feature .cite .me { color: var(--teal-700); }
+.pub-feature .desc { color: var(--slate); font-size: 0.95rem; margin: 6px 0 0; }
+@media (max-width: 640px){ .pub-feature { grid-template-columns: 1fr; } }
+
+/* ---------- Full publication list ---------- */
+.pub-list { max-width: 840px; }
+.pub-list .item { padding: 14px 0; border-bottom: 1px solid var(--line); color: var(--slate); font-size: 0.96rem; line-height: 1.55; }
+.pub-list .item b { color: var(--ink); }
+.pub-list .item .me { color: var(--teal-700); font-weight: 700; }
+
+/* ---------- Gallery: yearly, one photo at a time ---------- */
+.gal-year { margin: 36px 0 16px; padding-bottom: 6px; border-bottom: 2px solid var(--teal-050); color: var(--teal-700); }
+.gal-photo { width: 100%; border-radius: var(--radius); box-shadow: var(--shadow); display: block; margin: 0 0 20px; }
+.gal-ph {
+  width: 100%; aspect-ratio: 3/2; border: 2px dashed var(--teal-300); border-radius: var(--radius);
+  background: var(--bg-soft); color: var(--muted); display: grid; place-items: center; text-align: center; padding: 16px; margin: 0 0 20px; font-size: 0.9rem;
+}
