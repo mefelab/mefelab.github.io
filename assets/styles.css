@@ -68,7 +68,7 @@ p { margin: 0 0 1.1rem; }
   display: grid; place-items: center; color: #fff; font-weight: 800; font-size: 1rem;
   letter-spacing: 0.5px;
 }
-.brand .logo-img { width: 42px; height: 42px; border-radius: 10px; object-fit: contain; flex: none; display: block; }
+.brand .logo-img { height: 44px; width: auto; max-width: 150px; border-radius: 8px; object-fit: contain; flex: none; display: block; }
 .brand .brand-text { line-height: 1.15; }
 .brand .brand-name { font-weight: 800; color: var(--teal-900); font-size: 1.02rem; }
 .brand .brand-sub { font-size: 0.74rem; color: var(--muted); letter-spacing: 0.02em; }
@@ -113,16 +113,22 @@ p { margin: 0 0 1.1rem; }
   background: var(--teal-300); opacity: 0.35;
 }
 
-/* ---------- Home hero (text + small framed campus image) ---------- */
-.home-hero { padding: 60px 0 28px; background: var(--bg); }
-.hero-wrap { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 44px; align-items: center; }
-.home-hero h1 { font-size: clamp(2.1rem, 4vw, 3.1rem); margin: 0 0 12px; letter-spacing: -0.02em; }
-.home-hero .sub { color: var(--slate); font-size: clamp(1.05rem, 1.8vw, 1.28rem); margin: 0; max-width: 46ch; }
-.hero-photo {
-  width: 100%; height: auto; max-height: 360px; object-fit: cover;
+/* ---------- Home hero (centered banner image + title below, Jin-style) ---------- */
+.home-hero { padding: 40px 0 22px; background: var(--bg); text-align: center; }
+.hero-banner {
+  width: 100%; max-width: 760px; max-height: 420px; object-fit: cover;
+  border-radius: var(--radius); box-shadow: var(--shadow); display: block; margin: 0 auto 30px;
+}
+.home-hero h1 { font-size: clamp(1.85rem, 3.4vw, 2.7rem); margin: 0 0 10px; letter-spacing: -0.02em; }
+.home-hero .sub { color: var(--slate); font-size: clamp(1.02rem, 1.7vw, 1.2rem); margin: 0 auto; max-width: 72ch; }
+
+/* second, small home photo beside intro text */
+.home-intro { display: grid; grid-template-columns: 1fr 340px; gap: 38px; align-items: center; }
+.home-photo {
+  width: 100%; height: auto; max-height: 300px; object-fit: cover;
   border-radius: var(--radius); box-shadow: var(--shadow); display: block;
 }
-@media (max-width: 760px){ .hero-wrap { grid-template-columns: 1fr; gap: 22px; } .home-hero { padding-top: 40px; } }
+@media (max-width: 760px){ .home-intro { grid-template-columns: 1fr; gap: 22px; } }
 
 /* ---------- Compact page header (inner pages) ---------- */
 .page-head { padding: 52px 0 18px; }
@@ -232,7 +238,7 @@ section { padding: 48px 0; }
 .pub .chip.hot { background: #fff7ec; border-color:#f3dcb3; color: var(--amber); font-weight:600; }
 
 /* ---------- People ---------- */
-.profile { display:grid; grid-template-columns: 260px 1fr; gap: 40px; align-items:start; }
+.profile { display:grid; grid-template-columns: 160px 1fr; gap: 40px; align-items:start; }
 .avatar {
   width: 100%; aspect-ratio: 3 / 4; border-radius: var(--radius); overflow:hidden;
   object-fit: cover; object-position: center top;
@@ -300,7 +306,7 @@ section { padding: 48px 0; }
 }
 
 /* ---------- Responsive ---------- */
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .grid-3 { grid-template-columns: 1fr; }
   .grid-2 { grid-template-columns: 1fr; }
   .split { grid-template-columns: 1fr; gap: 28px; }
