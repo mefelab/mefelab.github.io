@@ -235,9 +235,9 @@ section { padding: 48px 0; }
 .pub .chip.hot { background: #fff7ec; border-color:#f3dcb3; color: var(--amber); font-weight:600; }
 
 /* ---------- People ---------- */
-.profile { display:grid; grid-template-columns: 140px 1fr; gap: 40px; align-items:start; }
+.profile { display:grid; grid-template-columns: 190px 1fr; gap: 40px; align-items:start; }
 .avatar {
-  width: 100%; aspect-ratio: 3 / 4; border-radius: 50%; overflow:hidden;
+  width: 100%; aspect-ratio: 3 / 4; border-radius: var(--radius); overflow:hidden;
   object-fit: cover; object-position: center top;
   background: linear-gradient(135deg, var(--teal-500), var(--teal-300));
   display:grid; place-items:center; color:#fff; font-size: 3.4rem; font-weight: 800;
