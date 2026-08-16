@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>News &amp; Announcements — MEFE Lab</title>
+  <meta name="description" content="News and announcements from the MEFE Lab at Yonsei University." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <style>
+    /* Two-column news entry: picture + related text */
+    .news-entry {
+      display: grid; grid-template-columns: 320px 1fr; gap: 30px; align-items: center;
+      padding: 28px 0; border-bottom: 1px solid var(--line);
+    }
+    .news-entry:last-child { border-bottom: 0; }
+    .news-entry .n-img {
+      width: 100%; aspect-ratio: 4/3; object-fit: cover;
+      border-radius: var(--radius); box-shadow: var(--shadow); display: block;
+    }
+    .news-entry .n-ph {
+      width: 100%; aspect-ratio: 4/3; border: 2px dashed var(--teal-300); border-radius: var(--radius);
+      background: var(--bg-soft); color: var(--muted); display: grid; place-items: center;
+      text-align: center; padding: 12px; font-size: 0.82rem;
+    }
+    .news-entry .date { color: var(--teal-500); font-weight: 700; font-size: 0.9rem; margin-bottom: 6px; }
+    .news-entry h3 { margin: 0 0 8px; }
+    .news-entry p { margin: 0; color: var(--slate); }
+    @media (max-width: 700px){ .news-entry { grid-template-columns: 1fr; gap: 14px; } }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">
+        <a href="index.html" style="display:flex;align-items:center;gap:12px;text-decoration:none;">
+          <img src="assets/Mefe_lab_duck_260815ver5.png" alt="Microbiome Ecology & Functional Engineering Lab" class="logo-img" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo',textContent:'MEFE'}))" />
+          <span class="brand-name" style="color:var(--teal-900);font-weight:800;font-size:0.9rem;line-height:1.15;max-width:230px;">Microbiome Ecology &amp; Functional Engineering Lab</span>
+        </a>
+      </div>
+      <nav class="nav-links">
+        <a href="news.html" class="active">News</a>
+        <a href="research.html">Research</a>
+        <a href="mission.html">Mission</a>
+        <a href="team.html">Team</a>
+        <a href="pi.html">Kiseok</a>
+        <a href="papers.html">Papers</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="join.html">Join Us</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="page-head">
+    <div class="container">
+      <h1>News &amp; Announcements</h1>
+      <p class="sub">What's happening in the lab.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="container" style="max-width:860px;">
+
+      <!--
+        TO ADD A NEWS ITEM: copy one .news-entry block below, change the date/title/text,
+        and set the image src to a file you place in assets/ (e.g. assets/news-xxxx.jpg).
+        Until the image exists, a dashed placeholder shows automatically.
+      -->
+
+      <div class="news-entry">
+        <img class="n-img" src="assets/news-opening.jpg" alt=""
+             onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'n-ph',textContent:'Add assets/news-opening.jpg'}))" />
+        <div>
+          <div class="date">March 2027</div>
+          <h3>The MEFE Lab opens at Yonsei University</h3>
+          <p>Our lab officially launches in the Department of Systems Biology. We are recruiting our
+          founding team of students and researchers — see <a href="join.html">Join Us</a>.</p>
+        </div>
+      </div>
+
+      <div class="news-entry">
+        <img class="n-img" src="assets/news-nature.jpg" alt=""
+             onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'n-ph',textContent:'Add assets/news-nature.jpg'}))" />
+        <div>
+          <div class="date">2025</div>
+          <h3>Paper published in <em>Nature</em></h3>
+          <p>“Functional regimes define soil microbiome response to environmental change” appears in
+          <em>Nature</em>. <a href="https://doi.org/10.1038/s41586-025-09264-9" target="_blank" rel="noopener">Read it here</a>.</p>
+        </div>
+      </div>
+
+      <div class="news-entry">
+        <img class="n-img" src="assets/news-postdoc.jpg" alt=""
+             onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'n-ph',textContent:'Add assets/news-postdoc.jpg'}))" />
+        <div>
+          <div class="date">2025</div>
+          <h3>Kiseok begins postdoctoral research</h3>
+          <p>After completing his Ph.D. at the University of Chicago, Kiseok joined the Kunjapur Lab at
+          the University of Delaware to work on synthetic-biology approaches to the microbiome.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="f-name">Kiseok Lee Group</div>
+        <div class="f-sub">MEFE Lab · 마이크로바이옴 생태 기능설계 연구실 · Department of Systems Biology · Yonsei University</div>
+      </div>
+      <nav class="footer-links">
+        <a href="research.html">Research</a>
+        <a href="pi.html">Kiseok</a>
+        <a href="papers.html">Papers</a>
+        <a href="join.html">Join Us</a>
+        <a href="https://scholar.google.com/citations?user=UcMtC88AAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+      </nav>
+    </div>
+    <div class="container" style="margin-top:18px;color:#8fa3c8;font-size:0.85rem;">© 2027 MEFE Lab · Yonsei University · Seoul, Korea</div>
+  </footer>
+
+  <script src="assets/nav.js"></script>
+</body>
+</html>
