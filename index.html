@@ -21,7 +21,6 @@
         </a>
       </div>
       <nav class="nav-links">
-        <a href="news.html">News</a>
         <a href="research.html">Research</a>
         <a href="mission.html">Mission</a>
         <a href="team.html">Team</a>
@@ -34,41 +33,73 @@
     </div>
   </header>
 
-  <!-- Hero: campus image with title overlaid inside (Jin-style) -->
+  <!-- Carousel hero: rotating images with the group name overlaid -->
   <section class="home-hero">
     <div class="container">
       <div class="home-wrap">
-        <figure class="hero-figure">
-          <img src="assets/hero.jpg" alt="Yonsei University campus"
-               onerror="this.onerror=null;this.src='https://www.yonsei.ac.kr/sites/en_sc/images/sub/img-s-cam1.jpg';" />
-          <figcaption class="caption">
-            <h1>Kiseok Lee Group</h1>
-            <p>Microbiome Ecology &amp; Functional Engineering Lab at Yonsei University, Seoul, Korea.</p>
-          </figcaption>
-        </figure>
+        <div class="carousel">
+          <div class="carousel-window">
+            <div class="carousel-track" id="carTrack">
+              <div class="carousel-slide">
+                <img class="car-img" src="assets/hero.jpg" alt="Yonsei University campus"
+                     onerror="this.onerror=null;this.src='https://www.yonsei.ac.kr/sites/en_sc/images/sub/img-s-cam1.jpg';" />
+              </div>
+              <div class="carousel-slide">
+                <img class="car-img" src="assets/home.jpg" alt=""
+                     onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'car-ph',textContent:'Add assets/home.jpg'}))" />
+              </div>
+            </div>
+            <div class="carousel-caption">
+              <h1>Kiseok Lee Group</h1>
+              <p>Microbiome Ecology &amp; Functional Engineering Lab at Yonsei University, Seoul, Korea.</p>
+            </div>
+          </div>
+          <button class="carousel-arrow carousel-prev" aria-label="Previous slide">&#8249;</button>
+          <button class="carousel-arrow carousel-next" aria-label="Next slide">&#8250;</button>
+          <div class="carousel-dots">
+            <button class="carousel-dot active" aria-label="Slide 1"></button>
+            <button class="carousel-dot" aria-label="Slide 2"></button>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Intro: logo (left) + text (right) -->
+  <!-- MEFE Lab: big logo + title, then description -->
   <section>
     <div class="container">
       <div class="home-wrap">
-        <div class="intro-row">
-          <img class="home-logo" src="assets/Mefe_lab_duck_260815ver5.png" alt="MEFE lab logo"
+        <div class="mefe-intro">
+          <img class="mefe-logo" src="assets/Mefe_lab_duck_260815ver5.png" alt="MEFE Lab logo"
                onerror="this.style.display='none';" />
-          <div class="intro-text">
-            <p class="lead-text" style="margin-bottom:0;">
-              We study <strong>how to design robust microbiome function</strong> — combining microbial
-              ecology, data-driven modeling, and synthetic biology to engineer microbial communities that
-              perform reliably across changing environments, from agricultural soils to the human body.
-            </p>
+          <h2>MEFE Lab</h2>
+        </div>
+        <p class="lead-text" style="margin:0;">
+          We study <strong>how to design robust microbiome function</strong> — combining microbial
+          ecology, data-driven modeling, and synthetic biology to engineer microbial communities that
+          perform reliably across changing environments, from agricultural soils to the human body.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Static News and Announcements (end of home) -->
+  <section>
+    <div class="container">
+      <div class="home-wrap">
+        <h2>News and Announcements</h2>
+        <div class="news-grid">
+          <div class="news-card">
+            <p><b>Aug 2026:</b> The MEFE Lab website opens. We are recruiting undergraduate researchers who want to start reading papers together — see the <a href="join.html">Join Us</a> page for the application process.</p>
+            <img class="n-img" src="assets/news-aug2026.jpg" alt=""
+                 onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'n-ph',textContent:'Add assets/news-aug2026.jpg'}))" />
+          </div>
+          <div class="news-card">
+            <p><b>Mar 2027:</b> The MEFE Lab opens at Yonsei University.</p>
+            <img class="n-img" src="assets/news-mar2027.jpg" alt=""
+                 onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'n-ph',textContent:'Add assets/news-mar2027.jpg'}))" />
           </div>
         </div>
-        <p style="color:var(--slate);margin-top:22px;">
-          The lab opens in March 2027. We are recruiting our founding team —
-          <a href="join.html">see open positions</a>.
-        </p>
       </div>
     </div>
   </section>
@@ -90,6 +121,28 @@
     <div class="container" style="margin-top:18px;color:#8fa3c8;font-size:0.85rem;">© 2027 MEFE Lab · Yonsei University · Seoul, Korea</div>
   </footer>
 
+  <script>
+    (function () {
+      var track = document.getElementById('carTrack');
+      if (!track) return;
+      var count = track.children.length;
+      var dots = document.querySelectorAll('.carousel-dot');
+      var i = 0, timer;
+      function go(k) {
+        i = (k + count) % count;
+        track.style.transform = 'translateX(' + (-i * 100) + '%)';
+        for (var d = 0; d < dots.length; d++) dots[d].classList.toggle('active', d === i);
+      }
+      function start() { clearInterval(timer); timer = setInterval(function () { go(i + 1); }, 5000); }
+      for (var d = 0; d < dots.length; d++) {
+        (function (idx) { dots[idx].addEventListener('click', function () { go(idx); start(); }); })(d);
+      }
+      var prev = document.querySelector('.carousel-prev'), next = document.querySelector('.carousel-next');
+      if (prev) prev.addEventListener('click', function () { go(i - 1); start(); });
+      if (next) next.addEventListener('click', function () { go(i + 1); start(); });
+      go(0); start();
+    })();
+  </script>
   <script src="assets/nav.js"></script>
 </body>
 </html>
