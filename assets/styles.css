@@ -46,6 +46,7 @@ a { color: var(--teal-700); text-decoration: none; }
 a:hover { color: var(--teal-500); text-decoration: underline; }
 
 p { margin: 0 0 1.1rem; }
+strong { color: #000; }
 
 .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
 
@@ -131,7 +132,7 @@ p { margin: 0 0 1.1rem; }
 .news-lead { color: var(--slate); margin: 0 0 28px; }
 .news-lead b { color: var(--ink); }
 .news-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
-.news-card p { color: var(--slate); margin: 0 0 14px; font-size: 0.98rem; }
+.news-card p { color: #000; margin: 0 0 14px; font-size: 0.98rem; }
 .news-card p b { color: var(--ink); }
 .news-card .n-img { width: 100%; aspect-ratio: 16/10; object-fit: cover; border-radius: var(--radius); box-shadow: var(--shadow); display: block; }
 .news-card .n-ph {
@@ -187,7 +188,7 @@ p { margin: 0 0 1.1rem; }
 }
 .cor-card .cor-letter { font-size: 2.4rem; font-weight: 800; color: var(--teal-700); line-height: 1; }
 .cor-card h4 { margin: 0 0 6px; color: var(--teal-900); font-size: 1.05rem; }
-.cor-card p { margin: 0; color: var(--slate); font-size: 0.96rem; }
+.cor-card p { margin: 0; color: #000; font-size: 0.96rem; }
 @media (max-width: 560px){ .cor-card { grid-template-columns: 1fr; gap: 8px; } }
 
 /* ---------- Compact page header (inner pages) ---------- */
@@ -203,7 +204,7 @@ section { padding: 48px 0; }
   display:block; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em;
   text-transform: uppercase; color: var(--teal-500); margin-bottom: 10px;
 }
-.lead-text { font-size: 1.12rem; color: var(--slate); }
+.lead-text { font-size: 1rem; color: #000; }
 
 /* ---------- Buttons ---------- */
 .btn {
@@ -307,7 +308,7 @@ section { padding: 48px 0; }
 }
 .role { color: var(--teal-500); font-weight:600; margin: 2px 0 16px; }
 .cv-list { list-style:none; padding:0; margin: 0; }
-.cv-list li { padding: 8px 0; border-bottom:1px solid var(--line); color: var(--slate); }
+.cv-list li { padding: 8px 0; border-bottom:1px solid var(--line); color: #000; }
 .cv-list li b { color: var(--ink); }
 
 .open-roles { display:grid; gap: 18px; }
@@ -420,7 +421,7 @@ section { padding: 48px 0; }
 
 /* ---------- Full publication list ---------- */
 .pub-list { max-width: 840px; }
-.pub-list .item { padding: 14px 0; border-bottom: 1px solid var(--line); color: var(--slate); font-size: 0.96rem; line-height: 1.55; }
+.pub-list .item { padding: 14px 0; border-bottom: 1px solid var(--line); color: #000; font-size: 0.96rem; line-height: 1.55; }
 .pub-list .item b { color: var(--ink); }
 .pub-list .item .me { color: var(--teal-700); font-weight: 700; }
 
